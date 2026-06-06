@@ -1,76 +1,45 @@
-# 🔥 Bromo Fire Impact & LULC Dynamics Monitor
-**Pemantauan Dampak Kebakaran Hutan, Dinamika Tutupan Lahan, dan Analisis Spasial Kawasan Bromo berbasis Google Earth Engine (GEE)**
+# 🌋 Bromo Fire Emission & Burn Severity Tracker
+**Pemantauan Tingkat Keparahan Kebakaran (dNBR), Emisi Kualitas Udara (Aerosol, NO2, CO), dan Dinamika Angin berbasis Google Earth Engine (GEE)**
 
 ![Google Earth Engine](https://img.shields.io/badge/Google_Earth_Engine-JavaScript-4285F4?style=for-the-badge&logo=google)
-![Machine Learning](https://img.shields.io/badge/Machine_Learning-Random_Forest_%7C_SVM-FF6F00?style=for-the-badge)
-![Disaster Management](https://img.shields.io/badge/Disaster_Management-Wildfire_Monitoring-E53935?style=for-the-badge)
+![Sentinel](https://img.shields.io/badge/Copernicus-Sentinel--2_%7C_Sentinel--5P-1E88E5?style=for-the-badge)
+![Climate](https://img.shields.io/badge/ECMWF-ERA5_Wind_Vectors-00ACC1?style=for-the-badge)
 
 ## 📌 Deskripsi
-**Bromo Fire Impact Monitor** adalah kumpulan *script* Google Earth Engine (GEE) komprehensif yang dirancang untuk memetakan secara presisi dampak kebakaran hutan yang melanda kawasan Taman Nasional Bromo Tengger Semeru.
+Repositori ini berisi serangkaian *script* Google Earth Engine (GEE) yang dioptimalkan untuk mengevaluasi dampak langsung dari insiden kebakaran hutan di kawasan Taman Nasional Bromo Tengger Semeru pada **September 2023**.
 
-Dengan mengkomparasikan klasifikasi tutupan lahan (*Land Use Land Cover* / LULC) secara multi-tahun, aplikasi ini mengkuantifikasi transisi fase ekologis: kondisi **Pra-kebakaran (2022)**, **Periode Kebakaran (2023)**, hingga **Pasca-kebakaran & Pemulihan Ekosistem (2024)**. 
-
-Aplikasi ini dirancang untuk mendukung kegiatan:
-* 🔬 Riset ekologi restorasi dan geomatika kebencanaan.
-* 🌲 Kuantifikasi luasan area vegetasi yang hangus terbakar menjadi lahan terbuka (*burnt area/bare land*).
-* 🤖 Uji komparasi algoritma *Machine Learning* dalam mendeteksi perubahan tutupan lahan ekstrem.
-* 🏛️ Pembuatan landasan kebijakan mitigasi kebakaran lahan oleh otoritas taman nasional.
+Analisis dalam repositori ini berfokus pada dua aspek krusial pasca-bencana:
+1. **Dampak Ekologis:** Mengukur luasan dan tingkat keparahan area yang terbakar (*Burn Severity*) menggunakan indeks spektral dNBR.
+2. **Dampak Atmosferik & Emisi:** Memantau sebaran gas berbahaya (Aerosol, NO2, dan Karbon Monoksida/CO), serta menganalisis arah angin yang membawa polutan tersebut, lengkap dengan ekstraksi nilai piksel untuk analisis statistik (*Box Plot*).
 
 ---
 
-## 🚀 Modul Analisis Kebakaran Bromo
-Riset ini dipecah ke dalam beberapa *script* terintegrasi. Anda dapat menelusuri evolusi dampak kebakaran melalui tautan berikut:
+## 🚀 Koleksi Modul Analisis
+Riset ini dibagi menjadi 6 modul spesifik. Klik tautan untuk menjalankan simulasi langsung di *Code Editor* GEE:
 
 | Modul | Fokus Analisis | Tautan GEE |
 | :---: | :--- | :--- |
-| 🗂️ | **Modul Utama:** Master LULC & Fire Impact Bromo | [▶️ Buka Script](https://code.earthengine.google.com/?scriptPath=users%2Frosyidpaundra%2Fmangrove%3ALULC_BROMO) |
-| 🌿 | **Fase 1:** LULC Kondisi Pra-Kebakaran (2022) | [▶️ Buka Script](https://code.earthengine.google.com/df47951fd395ec83fdf8fe5189d0ec34) |
-| 🔥 | **Fase 2:** LULC Periode Kebakaran & Eskalasi (2023) | [▶️ Buka Script](https://code.earthengine.google.com/5f5f4a955c66143a5aa1427626d52094) |
-| 🌱 | **Fase 3:** LULC Pasca-Kebakaran / Pemulihan (2024) | [▶️ Buka Script](https://code.earthengine.google.com/7ec3d3a043d090776f902bdad2300b16) |
-| 🎯 | **Modul Validasi:** Uji Akurasi LULC (*Confusion Matrix*) | [▶️ Buka Script](https://code.earthengine.google.com/0f45a927cb5cd9fac5e68a53779d0db8) |
-| 🧮 | **Modul Statistik:** Kalkulasi Luasan Area Terbakar (Hektar) | [▶️ Buka Script](https://code.earthengine.google.com/6efbe7eba42998aa28cdb4972b4fc8fa) |
-| ⚙️ | **Modul AI:** Komparasi Algoritma *Classifier* | [▶️ Buka Script](https://code.earthengine.google.com/9b2f22a07a811919d13186ce46f6c1a3) |
+| 🔥 | **Modul 1: Burn Severity (dNBR) Global** <br> *Klasifikasi area terbakar (Low, Mod, High) menggunakan Sentinel-2 (Pra: 1-5 Sep, Pasca: 6-15 Sep).* | [▶️ Buka Script](https://code.earthengine.google.com/b46b2264328ccee4179b296ed1754d96) |
+| 🌫️ | **Modul 2: Aerosol Index Dynamics** <br> *Pemantauan ketebalan polusi asap (Aerosol) dengan S5P, dilengkapi time-series & box plot area.* | [▶️ Buka Script](https://code.earthengine.google.com/df47951fd395ec83fdf8fe5189d0ec34) |
+| ☠️ | **Modul 3: NO2 Emissions & Wind Vectors** <br> *Analisis kepadatan kolom NO2 (S5P) dikorelasikan dengan arah & kecepatan angin (ERA5).* | [▶️ Buka Script](https://code.earthengine.google.com/5f5f4a955c66143a5aa1427626d52094) |
+| 🔄 | **Modul 4: Integrasi Aerosol & CO** <br> *Pemantauan gabungan Aerosol Index dan Karbon Monoksida (CO) dengan komparasi 4 grafik time-series.* | [▶️ Buka Script](https://code.earthengine.google.com/0f45a927cb5cd9fac5e68a53779d0db8) |
+| ☁️ | **Modul 5: Carbon Monoxide (CO) Focus** <br> *Analisis spesifik emisi CO (mol/m²) dengan grafik deret waktu dan ekstraksi array untuk Box Plot.* | [▶️ Buka Script](https://code.earthengine.google.com/6efbe7eba42998aa28cdb4972b4fc8fa) |
+| 📊 | **Modul 6: dNBR Pixel Extraction (Box Plot)** <br> *Klasifikasi dNBR ditambah dengan fungsi ekstraksi nilai piksel mentah pada 3 zona sampel spesifik.* | [▶️ Buka Script](https://code.earthengine.google.com/9b2f22a07a811919d13186ce46f6c1a3) |
 
-*(Akses memerlukan akun Google Earth Engine)*
-
----
-
-## ✨ Fitur Utama
-| Fitur | Keterangan |
-| :--- | :--- |
-| 📅 **Time-Series Ekologis** | Menangkap pergeseran kelas tutupan lahan dari vegetasi ke *bare land* secara rinci dalam rentang 2022–2024. |
-| 🤖 **ML Classifiers** | Perbandingan kinerja algoritma *Random Forest*, *SVM*, *Naive Bayes*, dan *CART* untuk klasifikasi lanskap vulkanik. |
-| 🎯 **Validasi Ketat** | Perhitungan objektif *Overall Accuracy* (OA) dan *Kappa Coefficient* untuk memastikan keandalan deteksi area terbakar. |
-| 🧮 **Kalkulasi Deforestasi** | Mengubah piksel menjadi angka pasti (Total Hektar/Km²) untuk menilai kerugian ekologis dan suksesi vegetasi baru. |
+*(Akses memerlukan akun Google Earth Engine).*
 
 ---
 
-## 🖥️ Cara Menggunakan
-1. Pilih salah satu fase observasi (misalnya Fase 2: 2023) pada tabel modul di atas.
-2. Klik tombol **Run** pada antarmuka *Code Editor* GEE.
-3. Untuk melihat validitas deteksi lahan terbakar, buka tautan **Modul Validasi** dan periksa tab **Console** untuk hasil *Overall Accuracy*.
-4. Gunakan panel **Inspector** untuk mengklik area di peta guna melihat perubahan spektral piksel dari tahun ke tahun.
+## ✨ Fitur Utama & Metodologi
+### 1. Burn Severity Assessment (dNBR)
+* **Formula:** Menghitung selisih *Normalized Burn Ratio* (Pre-fire NBR dikurangi Post-fire NBR).
+* **Klasifikasi USGS:** Secara otomatis membagi tingkat keparahan menjadi *Low* (0.1 - 0.27), *Moderate* (0.27 - 0.44), dan *High* (> 0.44).
+* **Output:** Peta visualisasi keparahan, legenda interaktif, dan grafik batang luasan (dalam Hektar).
 
----
+### 2. Air Quality & Emission Monitoring (S5P)
+* **Parameter Atmosfer:** Memantau *Absorbing Aerosol Index* (AAI), *NO2 Column Number Density*, dan *CO Column Number Density*.
+* **Analisis Temporal:** Membandingkan emisi pra-kebakaran (awal September) dengan masa puncak eskalasi kebakaran (6-15 September).
+* **Charting:** Menghasilkan grafik deret waktu (*time-series*) rata-rata polusi harian secara otomatis.
 
-## 🤝 Kontribusi & Rekomendasi Pengembangan Lanjutan
-Pengembangan *tools* ini sangat terbuka. Untuk memperkuat analisis kebakaran, beberapa fitur berikut dapat ditambahkan di masa mendatang:
-
-- [ ] **Korelasi Kualitas Udara (Sentinel-5P):** Menarik untuk mengkorelasikan data spasial luasan terbakar ini dengan lonjakan *Aerosol Index* (AAI) dan Emisi Karbon Monoksida (CO) menggunakan citra Sentinel-5P, khususnya untuk menangkap emisi pekat pada periode kritis 1 - 15 September 2023.
-- [ ] **Burn Severity Index:** Menambahkan kalkulasi *Normalized Burn Ratio* (NBR) atau dNBR untuk mengklasifikasikan tingkat keparahan luka bakar ekosistem.
-- [ ] **Export to GeoTIFF:** Mengizinkan pengunduhan *layer* area terbakar ke *Google Drive* untuk diintegrasikan dengan data administrasi BNPB/BPBD di QGIS/ArcGIS.
-
-Silakan lakukan *Fork*, buat modifikasi, dan ajukan *Pull Request*!
-
----
-
-## 📄 Lisensi & Sitasi
-Proyek ini dirilis di bawah lisensi **MIT License** — bebas digunakan, dimodifikasi, dan didistribusikan dengan atribusi.
-
-Jika Anda menggunakan *script* ini dalam riset kebencanaan atau publikasi ilmiah, mohon sertakan sitasi:
-> [Nama Anda]. (2026). *Bromo Fire Impact & LULC Dynamics Monitor: Analisis Spasial Pemulihan Pasca Kebakaran berbasis GEE*. GitHub. https://github.com/[username]/bromo-fire-monitor
-
-<br>
-<div align="center">
-  Dibuat dengan ❤️ untuk mendukung mitigasi bencana dan pemulihan lingkungan di Indonesia
-</div>
+### 3. Ekstraksi Data Statistik (Box Plot Analysis)
+* Sistem `Reducer.toList()` digunakan untuk mengekst
