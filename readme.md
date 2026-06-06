@@ -4,18 +4,6 @@ Ekosistem skrip **Google Earth Engine (GEE)** komprehensif untuk memetakan, memo
 
 ---
 
-### 🏷️ Satellites & Framework Badges
-```html
-<p align="left">
-  <img src="[https://img.shields.io/badge/Earth%20Engine-Google-blue?style=for-the-badge&logo=googleearth](https://img.shields.io/badge/Earth%20Engine-Google-blue?style=for-the-badge&logo=googleearth)" alt="GEE">
-  <img src="[https://img.shields.io/badge/Satellite-Sentinel--2-green?style=for-the-badge&logo=esa](https://img.shields.io/badge/Satellite-Sentinel--2-green?style=for-the-badge&logo=esa)" alt="Sentinel 2">
-  <img src="[https://img.shields.io/badge/Satellite-Sentinel--5P-orange?style=for-the-badge&logo=esa](https://img.shields.io/badge/Satellite-Sentinel--5P-orange?style=for-the-badge&logo=esa)" alt="Sentinel 5P">
-  <img src="[https://img.shields.io/badge/Climate-ERA5%20Reanalysis-red?style=for-the-badge](https://img.shields.io/badge/Climate-ERA5%20Reanalysis-red?style=for-the-badge)" alt="ERA5">
-</p>
-```
-
----
-
 ## 📌 1. Alur Arsitektur Sistem
 
 Proyek ini mengintegrasikan data penginderaan jauh multi-sensor (*Sentinel-2 L2A* & *Sentinel-5P TROPOMI*) beserta data reanalisis iklim (*ERA5*) untuk melacak perubahan biofisik daratan sebelum, selama, dan setelah bencana.
