@@ -100,9 +100,5 @@ Seluruh skrip telah dioptimalkan dengan antarmuka grafis (GUI) interaktif langsu
 
 ## 👥 6. Kolaborasi & Sitasi Peneliti
 
-Repository ini bersifat terbuka untuk keperluan akademis, penelitian lanjutan, dan pengembangan model mitigasi bencana geo-atmosfer.
-
-```text
-Sitasi Rekomendasi:
-[Nama Anda/Institusi], 2026. Analisis Spasial Multi-Sensor Dampak Kebakaran Hutan Gunung Bromo Menggunakan Google Earth Engine. Repositori GitHub.
-```
+Repository ini bersifat terbuka untuk keperluan akademis, penelitian lanjutan, dan pengembangan model mitigasi bencana geo-atmosfer. 
+Berteman di Linkedin https://www.linkedin.com/in/rosyid-paundra/
